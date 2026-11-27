@@ -1,0 +1,43 @@
+MULTICAM DESDE SINCRO  v1.3
+===========================
+Arma una Multicamera Source Sequence por cada grupo de una secuencia de sincro de Premiere.
+Escribe una COPIA del proyecto (<nombre>_MULTICAM.prproj) con un bin <secuencia>_multicams.
+El proyecto original no se toca. Deja al lado un _log.txt con el detalle.
+
+Siempre:
+  - Premiere cerrado.
+  - El proyecto tiene que tener al menos UNA multicam hecha a mano (la usa de modelo;
+    mejor si es con audio Multichannel).
+  - Se elige la secuencia de sincro por numero (Enter = la primera; las SYNC van arriba).
+
+
+WINDOWS
+-------
+1_Usar
+  Arrastra el .prproj sobre MulticamDesdeSincro.bat.
+  El .bat y el .ps1 tienen que estar juntos en la misma carpeta.
+
+2_Compilar_EXE
+  Doble clic en Compilar_EXE.bat -> genera MulticamDesdeSincro.exe en esa carpeta.
+  La primera vez instala el modulo ps2exe (necesita internet, una sola vez).
+  El .exe queda solo: se puede copiar a cualquier PC con Windows 10/11 sin instalar nada.
+  Uso: arrastrar el .prproj sobre el .exe (o doble clic y arrastrarlo a la ventana).
+  Nota: algunos antivirus desconfian de los .exe hechos con ps2exe. Si lo bloquea,
+  agregalo como excepcion o usa el .bat.
+
+
+MAC
+---
+Requisito (una sola vez): PowerShell para Mac.
+  https://aka.ms/powershell-release?tag=stable  (.pkg: arm64 = Apple Silicon, x64 = Intel)
+  o con Homebrew:  brew install --cask powershell
+
+Usar directo
+  Doble clic en MulticamDesdeSincro.command y arrastra el .prproj a la ventana de Terminal.
+  La primera vez macOS puede bloquearlo: clic derecho > Abrir > Abrir.
+
+Compilar la app
+  Doble clic en Compilar_App.command -> genera MulticamDesdeSincro.app en esa carpeta.
+  Despues: solta el .prproj encima de la app (se abre la Terminal y corre).
+  La app tambien necesita PowerShell para Mac instalado.
+  Si macOS no deja abrir los .command: en Terminal,  chmod +x *.command
